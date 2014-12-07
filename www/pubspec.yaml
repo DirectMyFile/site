@@ -1,7 +1,7 @@
-name: 'site'
+name: site_www
 version: 0.1.0
 description: >
-  The site for directcode.org.
+  The client-side site for directcode.org.
 homepage: https://www.directcode.org
 environment:
   sdk: '>=1.8.0'
