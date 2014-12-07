@@ -4,4 +4,48 @@
 <link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
 
 <polymer-element name="dc-footer" noscript>
+  <template>
+  <style shim-shadowdom>
+  :host {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background-color: #039BE5;
+  }
+
+  .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  a {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    text-decoration: none;
+    color: white;
+  }
+
+  .text-alt {
+    color: rgba(255,255,255,0.5);
+  }
+
+  paper-icon-button {
+    margin-left: 8px;
+    color: white;
+  }
+  </style>
+
+  <div container horizontal layout class="container">
+    <a href="http://webchat.esper.net/?nick=Webchater...&channels=directcode&prompt=0">#directcode<br/><span class="text-alt">irc.esper.net:6667</span></a>
+    <div flex></div>
+    <a href="https://github.com/DirectMyFile">
+      <paper-icon-button src="/images/icons/github.png"></paper-icon-button>
+    </a>
+    <a href="http://git.directcode.org">
+      <paper-icon-button src="/images/icons/gitlab.png"></paper-icon-button>
+    </a>
+  </div>
+</template>
 </polymer-element>

@@ -9,6 +9,7 @@
 <link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
 
 <link rel="import" href="../../packages/site/header.html">
+<link rel="import" href="../../packages/site/footer.html">
 
 <polymer-element name="dc-app">
   <template>
@@ -22,6 +23,19 @@
         box-sizing: border-box;
         padding: 8px;
       }
+
+      .content {
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+
+      .inner-content {
+        display: block;
+      }
+
+      core-header-panel /deep/ #dropShadow {
+        box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.26);
+      }
     </style>
 
     <!-- forceNarrow wasn't working, so I tried to make it as futureproof as possible. -->
@@ -30,8 +44,11 @@
         <paper-icon-button icon="arrow-back" id="arrow" on-click="{{closeDrawer}}"></paper-icon-button>
       </div>
       <core-header-panel mode="waterfall-tall" main>
-        <dc-header id="header"></dc-header>
-        <div class="content">Hello world!</div>
+        <dc-header class="core-header" id="header"></dc-header>
+        <div class="content" vertical layout fit>
+          <div class="inner-content" flex>Hello world!</div>
+          <dc-footer></dc-footer>
+        </div>
       </core-header-panel>
     </core-drawer-panel>
   </template>

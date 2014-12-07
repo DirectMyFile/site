@@ -20,11 +20,25 @@
         box-sizing: border-box;
         display: block;
         background-color: #03A9F4;
+        box-shadow: none;
       }
 
       .header {
+        transition: padding 0.18s ease-in;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      :host(.tall) .header {
         padding-top: 70px;
         padding-bottom: 70px;
+      }
+
+      @media (max-width: 767px) {
+        .header {
+          padding-top: 30px !important;
+          padding-bottom: 30px !important;
+        }
       }
 
       .hamburger {
@@ -41,10 +55,6 @@
         margin-left: 38px;
         width: 525px;
         color: white;
-      }
-
-      .spacer {
-        flex: 1;
       }
 
       .sign-in {
@@ -68,7 +78,7 @@
           <paper-tab>{{tab}}</paper-tab>
         </template>
       </paper-tabs>
-      <div class="spacer"></div>
+      <div flex></div>
       <paper-button raised class="sign-in" hidden-xs>Sign In</paper-button>
     </div>
   </template>
