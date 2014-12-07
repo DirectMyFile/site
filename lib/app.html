@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<link rel="import" href="../../packages/core_elements/core_header_panel.html">
+<link rel="import" href="../../packages/core_elements/core_drawer_panel.html">
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+
+<link rel="import" href="../../packages/site/header.html">
+
+<polymer-element name="dc-app">
+  <template>
+    <style shim-shadowdom>
+      core-header-panel {
+        height: 100%;
+      }
+
+      [drawer] {
+        background-color: rgb(237,237,237);
+        box-sizing: border-box;
+        padding: 8px;
+      }
+    </style>
+
+    <!-- forceNarrow wasn't working, so I tried to make it as futureproof as possible. -->
+    <core-drawer-panel responsiveWidth="1000000px" id="drawer">
+      <div drawer>
+        <paper-icon-button icon="arrow-back" id="arrow" on-click="{{closeDrawer}}"></paper-icon-button>
+      </div>
+      <core-header-panel mode="waterfall-tall" main>
+        <dc-header id="header"></dc-header>
+        <div class="content">Hello world!</div>
+      </core-header-panel>
+    </core-drawer-panel>
+  </template>
+  <script type="application/dart" src="app.dart"></script>
+</polymer-element>

@@ -1,0 +1,17 @@
+name: 'site'
+version: 0.0.1
+description: >
+  The site for directcode.org.
+homepage: https://www.directcode.org
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  browser: any
+  polymer: any
+  paper_elements: any
+  core_elements: any
+transformers:
+- polymer:
+    entry_points: web/index.html
+- $dart2js:
+    commandLineOptions: ["--enable-enum"]

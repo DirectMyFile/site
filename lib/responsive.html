@@ -1,0 +1,68 @@
+<!-- 'Inspired' by Bootstrap's responsive helpers. -->
+<style shim-shadowdom>
+
+html /deep/ [container] {
+  max-width: 1200px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+html /deep/ [xs],
+html /deep/ [sm],
+html /deep/ [md],
+html /deep/ [lg] {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  html /deep/ [xs] {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  html /deep/ [sm] {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: @992px) and (max-width: @1199px) {
+  html /deep/ [md] {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: @1200px) {
+  html /deep/ [lg] {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html /deep/ [hidden-xs] {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  html /deep/ [hidden-sm] {
+    display: none !important;
+  }
+}
+
+@media (min-width: @992px) and (max-width: @1199px) {
+  html /deep/ [hidden-md] {
+    display: none !important;
+  }
+}
+
+@media (min-width: @1200px) {
+  html /deep/ [hidden-lg] {
+    display: none !important;
+  }
+}
+
+</style>

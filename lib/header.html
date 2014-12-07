@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_tabs.html">
+<link rel="import" href="../../packages/paper_elements/paper_tab.html">
+
+<link rel="import" href="../../packages/site/responsive.html">
+
+<polymer-element name="dc-header">
+  <template>
+    <style shim-shadowdom>
+      :host {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        background-color: #03A9F4;
+      }
+
+      .header {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+
+      .hamburger {
+        margin-right: 8px;
+      }
+
+      .title {
+        color: white;
+        font-size: 45px;
+      }
+
+      .tabs {
+        margin-left: 38px;
+        width: 525px;
+        color: white;
+      }
+
+      .spacer {
+        flex: 1;
+      }
+
+      .sign-in {
+        background-color: rgb(250,250,250);
+        color: #03A9F4;
+        width: 120px;
+        height: 36px;
+        line-height: 36px;
+        padding: 0;
+      }
+    </style>
+
+    <div container horizontal layout center class="header">
+      <paper-icon-button icon="menu" class="hamburger" on-click="{{buttonClick}}" xs></paper-icon-button>
+      <div class="title">directcode</div>
+      <paper-tabs selected="0" class="tabs" id="navTabs" hidden-xs>
+        <template repeat="{{tab in tabs}}">
+          <paper-tab>{{tab}}</paper-tab>
+        </template>
+      </paper-tabs>
+      <div class="spacer"></div>
+      <paper-button raised class="sign-in" hidden-xs>Sign In</paper-button>
+    </div>
+  </template>
+  <script type="application/dart" src="header.dart"></script>
+</polymer-element>
