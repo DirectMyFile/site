@@ -19,6 +19,6 @@ class DCAppElement extends PolymerElement {
   }
 
   closeDrawer() {
-    ($["drawer"] as CoreDrawerPanel).closePanel();
+    ($["drawer"] as CoreDrawerPanel).closeDrawer();
   }
 }
